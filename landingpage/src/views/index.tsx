@@ -4,71 +4,86 @@ import profile from '../assets/img/profile-image.png';
 import facebook from '../assets/img/red-social/icons8-facebook.svg';
 import linkedin from '../assets/img/red-social/linkedin-svgrepo-com.svg';
 import github from '../assets/img/red-social/icons8-github-50.png';
-import react from '../assets/img/framework/icons8-.net-framework.svg'
+import asp from '../assets/img/framework/asp.svg'
+import angular from '../assets/img/framework/angular.svg'
 export default function Index() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
 
     const toggleMenu = () => {
-        setIsOpen(!isOpen);
+        setShowMenu(!showMenu);
     };
 
-    let facebookLink = 'https://www.facebook.com/bauwu14/';
-    let linkedingLink = 'https://www.linkedin.com/in/alfredo-bautista-ramirez14/';
-    let githubLink = 'https://github.com/bauDevv';
+    const facebookLink = 'https://www.facebook.com/bauwu14/';
+    const linkedingLink = 'https://www.linkedin.com/in/alfredo-bautista-ramirez14/';
+    const githubLink = 'https://github.com/bauDevv';
 
     return (
-        <div className=' align-middle'>
+        <div className=' justify-center'>
             {/* navbar */}
-            <nav className='flex lg:justify-center sm:justify-between items-center'>
-                <div className=''>
-                    <a href="#home"></a>
+            <nav className="">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex items-center justify-between h-16">
+                        <div className="flex items-center">
+                            <a className="text-black font-bold text-lg">Alfredo Bautista</a>
+                        </div>
+                        <div className="hidden sm:block">
+                            <div className="flex space-x-4">
+                                <a href="#home" className='hover:text-white active'>Home</a>
+                                <a href="#aboutme" className='hover:text-white'>About me</a>
+                                <a href="#experience" className='hover:text-white'>My experience</a>
+                                <a href="#portfolio" className='hover:text-white'>Portfolio</a>
+                            </div>
+                        </div>
+                        <div className="sm:hidden">
+                            <button
+                                type="button"
+                                className="hover:bg-gray-700 hover:text-white block px-2 py-2 rounded-md text-base font-medium"
+                                onClick={toggleMenu}
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="icon icon-tabler icon-tabler-menu"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path stroke="none" d="M0 0h24v24H0z" />
+                                    <line x1="4" y1="6" x2="20" y2="6" />
+                                    <line x1="4" y1="12" x2="20" y2="12" />
+                                    <line x1="4" y1="18" x2="20" y2="18" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div className={`${isOpen ? 'hidden' : 'block'
-                    } md:static absolute md:min-h-fit min-h-[60vh] left-1 top-[9%] md:w-auto w-full pt-5`}>
-                    <ul className='flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8'>
-                        <li className='hover:text-white'>
-                            <a href="#home">Home</a>
-                        </li>
-                        <li className='hover:text-white'>
-                            <a href="#aboutme">About me</a>
-                        </li>
-                        <li className='hover:text-white'>
-                            <a href="#experience">My experience</a>
-                        </li>
-                        <li className='hover:text-white'>
-                            <a href="#portfolio">Portfolio</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <button
-                        className="navbar-toggler btn btn-square btn-ghost md:hidden"
-                        onClick={toggleMenu}
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="icon icon-tabler icon-tabler-menu"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            fill="none"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <line x1="4" y1="6" x2="20" y2="6" />
-                            <line x1="4" y1="12" x2="20" y2="12" />
-                            <line x1="4" y1="18" x2="20" y2="18" />
-                        </svg>
-                    </button>
+                <div className={`${showMenu ? 'block' : 'hidden'} sm:hidden`}>
+                    <div className="px-2 pt-2 pb-3 space-y-1">
+                        <ul className='p-4'>
+                            <li className='p-2'>
+                                <a href="#home" className='hover:text-white active'>Home</a>
+                            </li>
+                            <li className='p-2'>
+                                <a href="#aboutme" className='hover:text-white'>About me</a>
+                            </li>
+                            <li className='p-2'>
+                                <a href="#experience" className='hover:text-white'>My experience</a>
+                            </li>
+                            <li className='p-2'>
+                                <a href="#portfolio" className='hover:text-white'>Portfolio</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
             {/* Home section */}
             <section id="home" >
                 <div>
-                    <div className="col-span-12 text-container">
+                    <div className="text-container">
                         <div>
                             <p> Welcome!</p>
                             <h2>Systems Engineering</h2>
@@ -79,13 +94,13 @@ export default function Index() {
             </section>
             {/* Abotu me section */}
             <section id='aboutme'>
-                <div className=' bg-slate-50 rounded-2xl shadow-2xl'>
+                <div className='bg-slate-50 rounded-2xl shadow-2xl'>
                     <div className=''>
-                        <div className="lg:flex md:flex sm:flex lg:grid-cols-2 sm:grid-flow-col gap-4 sm:grid-rows-1 sm:grid-cols-1 p-5">
+                        <div className="lg:flex lg:grid-cols-2 md:flex md:grid-cols-1 md:grid-rows-2 sm:grid sm:grid-rows-2 sm:grid-cols-1 gap-4 p-5">
                             <div className="flex">
-                                <img src={profile} className="lg:max-w-screen md:max-w-screen sm:max-w-xs rounded-lg shadow-2xl p-2" />
+                                <img src={profile} className="lg:max-w-screen md:max-w-xs sm:max-w-screen rounded-lg shadow-2xl p-2" />
                             </div>
-                            <div className="flex-grow">
+                            <div className="lg:flex-grow md:flex-grow sm:flex sm:items-center">
                                 <div>
                                     <div className='text-4xl p-4'>
                                         <h1>About me</h1>
@@ -118,31 +133,31 @@ export default function Index() {
             </section>
             {/* My experience section */}
             <section id='experience' className='pt-10'>
-                <div className='container bg-slate-50 rounded-2xl shadow-2xl'>
-                    <div>
-                        <h1>In my experience, I have developed systems in different frameworks, languages, and environments, using various methodologies and development patterns. Here is a list of each one:</h1>
-                    </div>
-                    <div className='grid lg:grid-cols-3 lg:grid-rows-1'>
-                        <div className='p-5'>
-                            <div>
-                                <h1 className=' text-3xl font-bold'>Lenguajes</h1>
-                            </div>
-                            <div className='carousel'>
-                                <div id='item1' className='carousel-item justify-center w-full'>
-                                    <img src={react} className='logo-framework' />
+                <div className='bg-slate-50 rounded-2xl shadow-2xl p-5'>
+                    <div className=' items-center'>
+                        <div className='p-4'>
+                            <h1 className=' text-3xl p-2'>My experience</h1>
+                        </div>
+                        <div className='p-4'>
+                            <h1>I have developed systems in different frameworks, languages, and environments, using various methodologies and development patterns. Here is a list of each one:</h1>
+                        </div>
+                        <div className='p-4'>
+                            <div className='grid lg:grid-cols-3 lg:grid-rows-1 sm:grid-cols-1 sm:grid-rows-3'>
+                                <div>
+                                    <div className='p-2'>
+                                        <h1>Frameworks</h1>
+                                    </div>
+                                   
                                 </div>
-                                <div id='item2' className='carousel-item justify-center w-full'>
-                                    <img src={react} className='logo-framework' />
+
+                                <div>
+                                    <h1>Hola mundo</h1>
                                 </div>
-                            </div>
-                            <div className="flex justify-center w-full gap-2">
-                                <a href="#item1" className="btn btn-xs">1</a>
-                                <a href="#item2" className="btn btn-xs">2</a>
-                                <a href="#item3" className="btn btn-xs">3</a>
-                                <a href="#item4" className="btn btn-xs">4</a>
+                                <div>
+                                    <h1>Hola mundo</h1>
+                                </div>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
