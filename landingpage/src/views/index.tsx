@@ -1,17 +1,25 @@
 import { useState } from 'react';
-import '../assets/index.css';
+import '../assets/css/index.css';
+import carousel_frameworks from '../components/carousel_frameworks';
+import carousel_lenguajes from '../components/carousel_lenguajes';
+
+//import icons from redes
 import profile from '../assets/img/profile-image.png';
 import facebook from '../assets/img/red-social/icons8-facebook.svg';
 import linkedin from '../assets/img/red-social/linkedin-svgrepo-com.svg';
 import github from '../assets/img/red-social/icons8-github-50.png';
-import asp from '../assets/img/framework/asp.svg'
-import angular from '../assets/img/framework/angular.svg'
+
+//import icons from frameworks
+import asp from '../assets/img/framework/asp.svg';
+import angular from '../assets/img/framework/angular.svg';
+
 export default function Index() {
     const [showMenu, setShowMenu] = useState(false);
 
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
+    
 
     const facebookLink = 'https://www.facebook.com/bauwu14/';
     const linkedingLink = 'https://www.linkedin.com/in/alfredo-bautista-ramirez14/';
@@ -20,7 +28,7 @@ export default function Index() {
     return (
         <div className=' justify-center'>
             {/* navbar */}
-            <nav className="">
+            <nav>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center">
@@ -28,7 +36,7 @@ export default function Index() {
                         </div>
                         <div className="hidden sm:block">
                             <div className="flex space-x-4">
-                                <a href="#home" className='hover:text-white active'>Home</a>
+                                <a href="#home" className='hover:text-white'>Home</a>
                                 <a href="#aboutme" className='hover:text-white'>About me</a>
                                 <a href="#experience" className='hover:text-white'>My experience</a>
                                 <a href="#portfolio" className='hover:text-white'>Portfolio</a>
@@ -85,8 +93,8 @@ export default function Index() {
                 <div>
                     <div className="text-container">
                         <div>
-                            <p> Welcome!</p>
-                            <h2>Systems Engineering</h2>
+                            <p className=' text-5xl'> Welcome!</p>
+                            <h1 className='p-2 text-xl'>Systems Engineering</h1>
                         </div>
 
                     </div>
@@ -133,28 +141,67 @@ export default function Index() {
             </section>
             {/* My experience section */}
             <section id='experience' className='pt-10'>
-                <div className='bg-slate-50 rounded-2xl shadow-2xl p-5'>
-                    <div className=' items-center'>
-                        <div className='p-4'>
-                            <h1 className=' text-3xl p-2'>My experience</h1>
+                <div className='bg-slate-50 rounded-2xl shadow-2xl p-2'>
+                    <div className='lg:grid lg:grid-cols-2 lg:grid-rows-1 md:grid md:grid-cols-2 md:grid-rows-1 sm:grid sm:grid-cols-1 sm:grid-rows-2'>
+                        <div className='block p-4'>
+                            <div className='p-4'>
+                                <h1 className=' text-4xl p-2'>My experience</h1>
+                            </div>
+                            <div className='p-4'>
+                                <h1>I have developed systems in different frameworks, languages, and environments, using diferent methodologies and development patterns. Here is a list of each one:</h1>
+                            </div>
                         </div>
                         <div className='p-4'>
-                            <h1>I have developed systems in different frameworks, languages, and environments, using various methodologies and development patterns. Here is a list of each one:</h1>
-                        </div>
-                        <div className='p-4'>
-                            <div className='grid lg:grid-cols-3 lg:grid-rows-1 sm:grid-cols-1 sm:grid-rows-3'>
-                                <div>
-                                    <div className='p-2'>
-                                        <h1>Frameworks</h1>
+                            <div className='carousel main rounded-box bg-slate-400/20'>
+                                <div className='carousel-item w-full'>
+                                    <div>
+                                        <div className='p-2 mt-7'>
+                                            <h1 className=' font-bold'>Frameworks</h1>
+                                        </div>
+                                        <div className='carousel'>
+                                            {carousel_frameworks()}
+                                        </div>
                                     </div>
-                                   
                                 </div>
-
-                                <div>
-                                    <h1>Hola mundo</h1>
+                                <div className='carousel-item w-full'>
+                                    <div className=''>
+                                        <div className='p-2 mt-7'>
+                                            <h1 className=' font-bold'>Lenguajes</h1>
+                                        </div>
+                                        <div className='carousel'>
+                                            {carousel_lenguajes()}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h1>Hola mundo</h1>
+                                <div className=' carousel-item w-full'>
+                                    <div>
+                                        <div className='p-2 mt-7'>
+                                            <h1 className=' font-bold'>Data Bases</h1>
+                                        </div>
+                                        <div className='carousel'>
+                                            <div className='carousel-item'>
+                                                <div className=' block grid-cols-1 grid-rows-2 p-0'>
+                                                    <img src={angular} alt="" />
+                                                    <h1 className=' font-bold'>Angular</h1>
+                                                </div>
+                                            </div>
+                                            <div className='carousel-item'>
+                                                <div className=' block grid-cols-1 grid-rows-2 p-0'>
+                                                    <img src={asp} alt="" />
+                                                    <h1>Asp .Net and Net Core</h1>
+                                                </div>
+                                            </div>
+                                            <div className='carousel-item'>
+                                                <img src={angular} alt="" />
+                                            </div>
+                                            <div className='carousel-item'>
+                                                <img src={angular} alt="" />
+                                            </div>
+                                            <div className='carousel-item'>
+                                                <img src={angular} alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
