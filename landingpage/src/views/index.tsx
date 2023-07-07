@@ -4,6 +4,7 @@ import carousel_frameworks from '../components/carousel_frameworks';
 import carousel_lenguajes from '../components/carousel_lenguajes';
 import carousel_databases from '../components/carousel_databases';
 import carousel_control_version from '../components/carousel_controlversion';
+import carousel_others from '../components/carousel_others';
 
 //import icons from redes
 import profile from '../assets/img/profile-image.png';
@@ -46,7 +47,7 @@ export default function Index() {
                                 <a href="#home" className='hover:text-white'>Home</a>
                                 <a href="#aboutme" className='hover:text-white'>{changeFlag ? 'Sobre mí' : 'About me'}</a>
                                 <a href="#experience" className='hover:text-white'>{changeFlag ? 'Mi experiencia' : 'My experience'}</a>
-                                <a href="#portfolio" className='hover:text-white'>{changeFlag ? 'Portafolio' : 'Portfolio'}</a>
+                                {/* <a href="#portfolio" className='hover:text-white'>{changeFlag ? 'Portafolio' : 'Portfolio'}</a> */}
                                 <p className='flex justify-center items-center text-sm hover:text-white' onClick={changeFlags}>Lenguaje: <img src={changeFlag ? flagmx : flagusa} className='ml-2 h-5' /></p>
                             </div>
                         </div>
@@ -90,7 +91,7 @@ export default function Index() {
                                 <a href="#experience" className='hover:text-white'>{changeFlag ? 'Mi experiencia' : 'My experience'}</a>
                             </li>
                             <li className='p-2'>
-                                <a href="#portfolio" className='hover:text-white'>{changeFlag ? 'Portafolio' : 'Portfolio'}</a>
+                                {/* <a href="#portfolio" className='hover:text-white'>{changeFlag ? 'Portafolio' : 'Portfolio'}</a> */}
                             </li>
                             <li>
                                 <p className='flex justify-center items-center text-sm hover:text-white' onClick={changeFlags}>Lenguaje: <img src={changeFlag ? flagmx : flagusa} className='ml-2 h-5' /></p>
@@ -156,10 +157,10 @@ export default function Index() {
                     <div className='lg:grid lg:grid-cols-2 lg:grid-rows-1 md:grid md:grid-cols-2 md:grid-rows-1 sm:grid sm:grid-cols-1 sm:grid-rows-2'>
                         <div className='block p-4'>
                             <div className='p-4'>
-                                <h1 className=' text-4xl p-2'>My experience</h1>
+                                <h1 className=' text-4xl p-2'>{changeFlag ? 'Mi experiencia' : 'My experience'}</h1>
                             </div>
                             <div className='p-4'>
-                                <h1>I have developed systems in different frameworks, languages, and environments, using diferent methodologies and development patterns. Here is a list of each one:</h1>
+                                <h1 className=''>{changeFlag ? 'He desarrollado sistemas y aplicaciones en diversos frameworks, lenguajes y entornos, aplicando diferentes metodologías y patrones de diseño. A día de hoy, cuento con 1 año de experiencia como desarrollador, y en mi trayectoría, me he desempeñado como Arquitecto de Software, he gestionado y dirigido proyectos junto con equipos de desarrollo.' : 'I have developed systems in different frameworks, languages, and environments, using diferent methodologies and development patterns. Today, I have 1 year of experience as a developer, and in my career, I have worked as a Software Architect, I have managed and directed projects together with development teams.'}</h1>
                             </div>
                         </div>
                         <div className='p-4'>
@@ -168,7 +169,7 @@ export default function Index() {
                                     <div className='carousel-item w-full' id='item1'>
                                         <div>
                                             <div className='p-2 mt-7'>
-                                                <h1 className=' font-bold'>Framework</h1>
+                                                <h1 className=' font-bold'>Frameworks</h1>
                                             </div>
                                             <div className='carousel'>
                                                 {carousel_frameworks()}
@@ -178,9 +179,9 @@ export default function Index() {
                                     <div className='carousel-item w-full' id='item2'>
                                         <div className=''>
                                             <div className='p-2 mt-7'>
-                                                <h1 className=' font-bold'>Lenguaje</h1>
+                                                <h1 className=' font-bold'>Lenguajes</h1>
                                             </div>
-                                            <div className='carousel'>
+                                            <div className='carousel '>
                                                 {carousel_lenguajes()}
                                             </div>
                                         </div>
@@ -188,7 +189,7 @@ export default function Index() {
                                     <div className=' carousel-item w-full' id='item3'>
                                         <div>
                                             <div className='p-2 mt-7'>
-                                                <h1 className=' font-bold'>Database</h1>
+                                                <h1 className=' font-bold'>Databases</h1>
                                             </div>
                                             <div className='carousel'>
                                                 {carousel_databases()}
@@ -198,10 +199,20 @@ export default function Index() {
                                     <div className=' carousel-item w-full' id='item4'>
                                         <div>
                                             <div className='p-2 mt-7'>
-                                                <h1 className=' font-bold'>Control Version</h1>
+                                                <h1 className=' font-bold'>Control Versions</h1>
                                             </div>
                                             <div className='carousel'>
                                                 {carousel_control_version()}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className=' carousel-item w-full' id='item5'>
+                                        <div>
+                                            <div className='p-2 mt-7'>
+                                                <h1 className=' font-bold'>Others</h1>
+                                            </div>
+                                            <div className='carousel'>
+                                                {carousel_others()}
                                             </div>
                                         </div>
                                     </div>
@@ -211,13 +222,22 @@ export default function Index() {
                                     <a href="#item2" className="btn btn-xs">2</a>
                                     <a href="#item3" className="btn btn-xs">3</a>
                                     <a href="#item4" className="btn btn-xs">4</a>
+                                    <a href="#item5" className="btn btn-xs">5</a>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
-
+                    <br /><br />
+                    <div className='lg:grid lg:grid-cols-1 lg:grid-rows-2 md:grid md:grid-cols-2 md:grid-rows-1 sm:grid sm:grid-cols-1 sm:grid-rows-2'>
+                        <div className=' block p-4'>
+                            <div className='p-4'>
+                                <h1 className=' text-4xl p-2'>{changeFlag ? 'Experiencia laboral' : 'Work experience'}</h1>
+                            </div>
+                            <div className=''>
+                                <h1 className=''>{changeFlag ? 'A lo largo de mi experiencia, he laborado en diversas empresas, cada una con un enfoque distinto. En cada empresa a la que he entrado, he dejado mi grano de arena, implementando nuevas prácticas y mejorando unas otras. Y mi residencia en cada una de ellas ha enriquecido mis conocimientos, y he adquirido más y mejores prácticas.' : 'I have developed systems in different frameworks, languages, and environments, using diferent methodologies and development patterns. Today, I have 1 year of experience as a developer, and in my career, I have worked as a Software Architect, I have managed and directed projects together with development teams.'}</h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section id='portfolio'>
