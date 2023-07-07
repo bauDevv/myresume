@@ -10,22 +10,22 @@ export default function carousel_frameworks() {
         {
             value: 'ASP .NET CORE',
             image: asp,
-            index: 1
+            index:1
         },
         {
             value: 'Angular',
             image: angular,
-            index: 2
+            index:2
         },
         {
             value: 'IONIC',
             image: ionic,
-            index: 3
+            index:3
         },
         {
             value: 'ReactJS',
             image: react,
-            index: 4
+            index:4
         },
         // Agrega más elementos del arreglo frameworks según sea necesario
     ];
@@ -34,7 +34,7 @@ export default function carousel_frameworks() {
         <div className='carousel-item'>
             {frameworks.map((framework) => (
                 <div className='carousel-item'>
-                    <div className='block grid-cols-1 grid-rows-2 mt-[-1rem]' key={framework.index}>
+                    <div className='block grid-cols-1 grid-rows-2 mt-[-1rem]'>
                         <img src={framework.image} alt="" />
                         <h1 className='font-bold text-lg'>{framework.value}</h1>
                     </div>

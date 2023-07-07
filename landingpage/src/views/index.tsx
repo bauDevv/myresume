@@ -2,24 +2,31 @@ import { useState } from 'react';
 import '../assets/css/index.css';
 import carousel_frameworks from '../components/carousel_frameworks';
 import carousel_lenguajes from '../components/carousel_lenguajes';
+import carousel_databases from '../components/carousel_databases';
+import carousel_control_version from '../components/carousel_controlversion';
 
 //import icons from redes
 import profile from '../assets/img/profile-image.png';
 import facebook from '../assets/img/red-social/icons8-facebook.svg';
 import linkedin from '../assets/img/red-social/linkedin-svgrepo-com.svg';
 import github from '../assets/img/red-social/icons8-github-50.png';
+import flagmx from '../assets/img/flags/mexico.svg';
+import flagusa from '../assets/img/flags/usa.svg';
 
-//import icons from frameworks
-import asp from '../assets/img/framework/asp.svg';
-import angular from '../assets/img/framework/angular.svg';
 
 export default function Index() {
     const [showMenu, setShowMenu] = useState(false);
 
+    const [changeFlag, setChangeFlag] = useState(false);
+
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     };
-    
+
+    const changeFlags = () => {
+        setChangeFlag(!changeFlag);
+    };
+
 
     const facebookLink = 'https://www.facebook.com/bauwu14/';
     const linkedingLink = 'https://www.linkedin.com/in/alfredo-bautista-ramirez14/';
@@ -37,9 +44,10 @@ export default function Index() {
                         <div className="hidden sm:block">
                             <div className="flex space-x-4">
                                 <a href="#home" className='hover:text-white'>Home</a>
-                                <a href="#aboutme" className='hover:text-white'>About me</a>
-                                <a href="#experience" className='hover:text-white'>My experience</a>
-                                <a href="#portfolio" className='hover:text-white'>Portfolio</a>
+                                <a href="#aboutme" className='hover:text-white'>{changeFlag ? 'Sobre mí' : 'About me'}</a>
+                                <a href="#experience" className='hover:text-white'>{changeFlag ? 'Mi experiencia' : 'My experience'}</a>
+                                <a href="#portfolio" className='hover:text-white'>{changeFlag ? 'Portafolio' : 'Portfolio'}</a>
+                                <p className='flex justify-center items-center text-sm hover:text-white' onClick={changeFlags}>Lenguaje: <img src={changeFlag ? flagmx : flagusa} className='ml-2 h-5' /></p>
                             </div>
                         </div>
                         <div className="sm:hidden">
@@ -76,14 +84,18 @@ export default function Index() {
                                 <a href="#home" className='hover:text-white active'>Home</a>
                             </li>
                             <li className='p-2'>
-                                <a href="#aboutme" className='hover:text-white'>About me</a>
+                                <a href="#aboutme" className='hover:text-white'>{changeFlag ? 'Sobre mí' : 'About me'}</a>
                             </li>
                             <li className='p-2'>
-                                <a href="#experience" className='hover:text-white'>My experience</a>
+                                <a href="#experience" className='hover:text-white'>{changeFlag ? 'Mi experiencia' : 'My experience'}</a>
                             </li>
                             <li className='p-2'>
-                                <a href="#portfolio" className='hover:text-white'>Portfolio</a>
+                                <a href="#portfolio" className='hover:text-white'>{changeFlag ? 'Portafolio' : 'Portfolio'}</a>
                             </li>
+                            <li>
+                                <p className='flex justify-center items-center text-sm hover:text-white' onClick={changeFlags}>Lenguaje: <img src={changeFlag ? flagmx : flagusa} className='ml-2 h-5' /></p>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -93,8 +105,8 @@ export default function Index() {
                 <div>
                     <div className="text-container">
                         <div>
-                            <p className=' text-5xl'> Welcome!</p>
-                            <h1 className='p-2 text-xl'>Systems Engineering</h1>
+                            <p className=' text-5xl'> {changeFlag ? 'Bienvenido!' : 'Welcome!'}</p>
+                            <h1 className='p-2 text-xl'>{changeFlag ? 'Ingeniería en Sistemas' : 'Systems Engineering'}</h1>
                         </div>
 
                     </div>
@@ -111,15 +123,14 @@ export default function Index() {
                             <div className="lg:flex-grow md:flex-grow sm:flex sm:items-center">
                                 <div>
                                     <div className='text-4xl p-4'>
-                                        <h1>About me</h1>
+                                        <h1>{changeFlag ? 'Sobre mí' : 'About me'}</h1>
                                     </div>
                                     <div className='p-4 text-md'>
-                                        <h1>Hello, my name is Alfredo Bautista. I am a Systems Engineering student and currently work as a full-stack developer.
-                                            I am also responsible for managing projects, creating web design mockups, and handling AWS administration.</h1>
+                                        <h1>{changeFlag ? 'Hola, me llamo Alfredo Bautista. Soy estudiante de Ingeniería en Sistemas, actualmente trabajo como Desarrollador Full Stack, así como también soy responsable de organizar/dirigir proyectos, realizar maquetados de aplicaciones y administrar aplicaciones en AWS. ' : 'Hello, my name is Alfredo Bautista. I am a Systems Engineering student and currently work as a full-stack developer. I am also responsible for managing projects, creating web design mockups, and handling AWS administration.'}</h1>
                                     </div>
                                     <div className='p-4'>
                                         <div className=' font-bold'>
-                                            <h1>Contact:</h1>
+                                            <h1>{changeFlag ? 'Contacto:' : 'Contact:'}</h1>
                                         </div>
                                         <div className='grid grid-cols-3 grid-rows-1 p-5'>
                                             <div>
@@ -152,58 +163,58 @@ export default function Index() {
                             </div>
                         </div>
                         <div className='p-4'>
-                            <div className='carousel main rounded-box bg-slate-400/20'>
-                                <div className='carousel-item w-full'>
-                                    <div>
-                                        <div className='p-2 mt-7'>
-                                            <h1 className=' font-bold'>Frameworks</h1>
+                            <div className='rounded-box bg-slate-400/20'>
+                                <div className='carousel main'>
+                                    <div className='carousel-item w-full' id='item1'>
+                                        <div>
+                                            <div className='p-2 mt-7'>
+                                                <h1 className=' font-bold'>Framework</h1>
+                                            </div>
+                                            <div className='carousel'>
+                                                {carousel_frameworks()}
+                                            </div>
                                         </div>
-                                        <div className='carousel'>
-                                            {carousel_frameworks()}
+                                    </div>
+                                    <div className='carousel-item w-full' id='item2'>
+                                        <div className=''>
+                                            <div className='p-2 mt-7'>
+                                                <h1 className=' font-bold'>Lenguaje</h1>
+                                            </div>
+                                            <div className='carousel'>
+                                                {carousel_lenguajes()}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className=' carousel-item w-full' id='item3'>
+                                        <div>
+                                            <div className='p-2 mt-7'>
+                                                <h1 className=' font-bold'>Database</h1>
+                                            </div>
+                                            <div className='carousel'>
+                                                {carousel_databases()}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className=' carousel-item w-full' id='item4'>
+                                        <div>
+                                            <div className='p-2 mt-7'>
+                                                <h1 className=' font-bold'>Control Version</h1>
+                                            </div>
+                                            <div className='carousel'>
+                                                {carousel_control_version()}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className='carousel-item w-full'>
-                                    <div className=''>
-                                        <div className='p-2 mt-7'>
-                                            <h1 className=' font-bold'>Lenguajes</h1>
-                                        </div>
-                                        <div className='carousel'>
-                                            {carousel_lenguajes()}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className=' carousel-item w-full'>
-                                    <div>
-                                        <div className='p-2 mt-7'>
-                                            <h1 className=' font-bold'>Data Bases</h1>
-                                        </div>
-                                        <div className='carousel'>
-                                            <div className='carousel-item'>
-                                                <div className=' block grid-cols-1 grid-rows-2 p-0'>
-                                                    <img src={angular} alt="" />
-                                                    <h1 className=' font-bold'>Angular</h1>
-                                                </div>
-                                            </div>
-                                            <div className='carousel-item'>
-                                                <div className=' block grid-cols-1 grid-rows-2 p-0'>
-                                                    <img src={asp} alt="" />
-                                                    <h1>Asp .Net and Net Core</h1>
-                                                </div>
-                                            </div>
-                                            <div className='carousel-item'>
-                                                <img src={angular} alt="" />
-                                            </div>
-                                            <div className='carousel-item'>
-                                                <img src={angular} alt="" />
-                                            </div>
-                                            <div className='carousel-item'>
-                                                <img src={angular} alt="" />
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div className="flex justify-center w-full py-2 gap-2">
+                                    <a href="#item1" className="btn btn-xs">1</a>
+                                    <a href="#item2" className="btn btn-xs">2</a>
+                                    <a href="#item3" className="btn btn-xs">3</a>
+                                    <a href="#item4" className="btn btn-xs">4</a>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
 
