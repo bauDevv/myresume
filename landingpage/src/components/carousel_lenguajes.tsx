@@ -2,7 +2,6 @@ import '../assets/css/index.css';
 
 import typescript from '../assets/img/lenguajes/typescript.svg';
 import csharp from '../assets/img/lenguajes/csharp.svg';
-import delphi from '../assets/img/lenguajes/delphi.svg';
 import python from '../assets/img/lenguajes/python.svg';
 import php from '../assets/img/lenguajes/php.svg'
 
@@ -17,10 +16,6 @@ export default function carousel_lenguajes() {
             value: 'C#',
             img: csharp,
         }, 
-        {
-            value: 'Delphi | Pascal',
-            img: delphi,
-        },
         {
             value: 'Python',
             img: python,
