@@ -5,6 +5,7 @@ import carousel_lenguajes from '../components/carousel_lenguajes';
 import carousel_databases from '../components/carousel_databases';
 import carousel_control_version from '../components/carousel_controlversion';
 import carousel_others from '../components/carousel_others';
+import carousel_jobs from '../components/carousel_jobs';
 
 //import icons from redes
 import profile from '../assets/img/profile-image.png';
@@ -13,6 +14,7 @@ import linkedin from '../assets/img/red-social/linkedin-svgrepo-com.svg';
 import github from '../assets/img/red-social/icons8-github-50.png';
 import flagmx from '../assets/img/flags/mexico.svg';
 import flagusa from '../assets/img/flags/usa.svg';
+
 
 
 export default function Index() {
@@ -127,7 +129,7 @@ export default function Index() {
                                         <h1>{changeFlag ? 'Sobre mí' : 'About me'}</h1>
                                     </div>
                                     <div className='p-4 text-md'>
-                                        <h1>{changeFlag ? 'Hola, me llamo Alfredo Bautista. Soy estudiante de Ingeniería en Sistemas, actualmente trabajo como Desarrollador Full Stack, así como también soy responsable de organizar/dirigir proyectos, realizar maquetados de aplicaciones y administrar aplicaciones en AWS. ' : 'Hello, my name is Alfredo Bautista. I am a Systems Engineering student and currently work as a full-stack developer. I am also responsible for managing projects, creating web design mockups, and handling AWS administration.'}</h1>
+                                        <h1>{changeFlag ? 'Hola, me llamo Alfredo Bautista. Soy estudiante de Ingeniería en Sistemas, actualmente trabajo como Desarrollador Full Stack, así como también soy responsable de organizar/dirigir proyectos, realizar maquetados de aplicaciones y administrar aplicaciones en AWS. ' : 'Hello, my name is Alfredo Bautista. I am a Systems Engineering student and currently work as a full-stack developer. I am also responsible for managing projects, creating web design mockups, and App Management on AWS'}</h1>
                                     </div>
                                     <div className='p-4'>
                                         <div className=' font-bold'>
@@ -160,7 +162,7 @@ export default function Index() {
                                 <h1 className=' text-4xl p-2'>{changeFlag ? 'Mi experiencia' : 'My experience'}</h1>
                             </div>
                             <div className='p-4'>
-                                <h1 className=''>{changeFlag ? 'He desarrollado sistemas y aplicaciones en diversos frameworks, lenguajes y entornos, aplicando diferentes metodologías y patrones de diseño. A día de hoy, cuento con 1 año de experiencia como desarrollador, y en mi trayectoría, me he desempeñado como Arquitecto de Software, he gestionado y dirigido proyectos junto con equipos de desarrollo.' : 'I have developed systems in different frameworks, languages, and environments, using diferent methodologies and development patterns. Today, I have 1 year of experience as a developer, and in my career, I have worked as a Software Architect, I have managed and directed projects together with development teams.'}</h1>
+                                <h1 className=''>{changeFlag ? 'He desarrollado sistemas y aplicaciones en diversos frameworks, lenguajes y entornos, aplicando diferentes metodologías y patrones de diseño. A día de hoy, cuento con 1 año de experiencia, y en mi trayectoría, me he desempeñado como Arquitecto de Software y Desarrollador, he gestionado y dirigido proyectos junto con otros equipos de desarrollo.' : 'I have developed systems in different frameworks, languages, and environments, using diferent methodologies and development patterns. Today, I have 1 year of experience as a developer, and in my career, I have worked as a Software Architect, I have managed and directed projects together with development teams.'}</h1>
                             </div>
                         </div>
                         <div className='p-4'>
@@ -227,23 +229,40 @@ export default function Index() {
                             </div>
                         </div>
                     </div>
-                    <br /><br />
-                    <div className='lg:grid lg:grid-cols-1 lg:grid-rows-2 md:grid md:grid-cols-2 md:grid-rows-1 sm:grid sm:grid-cols-1 sm:grid-rows-2'>
+                </div>
+                <br />
+                <div className='bg-slate-50 rounded-2xl shadow-2xl p-2'>
+                    <div className='lg:grid lg:grid-cols-2 lg:grid-rows-1 md:grid md:grid-cols-2 md:grid-rows-1 sm:grid sm:grid-cols-1 sm:grid-rows-2'>
                         <div className=' block p-4'>
                             <div className='p-4'>
-                                <h1 className=' text-4xl p-2'>{changeFlag ? 'Experiencia laboral' : 'Work experience'}</h1>
+                                <h1 className='text-4xl p-2'>{changeFlag ? 'Experiencia laboral' : 'Work experience'}</h1>
                             </div>
-                            <div className=''>
-                                <h1 className=''>{changeFlag ? 'A lo largo de mi experiencia, he laborado en diversas empresas, cada una con un enfoque distinto. En cada empresa a la que he entrado, he dejado mi grano de arena, implementando nuevas prácticas y mejorando unas otras. Y mi residencia en cada una de ellas ha enriquecido mis conocimientos, y he adquirido más y mejores prácticas.' : 'I have developed systems in different frameworks, languages, and environments, using diferent methodologies and development patterns. Today, I have 1 year of experience as a developer, and in my career, I have worked as a Software Architect, I have managed and directed projects together with development teams.'}</h1>
+                            <div className='p-4'>
+                                <h1 >{changeFlag ? 'A lo largo de mi experiencia he laborado en diversas empresas, cada una con un enfoque distinto. En cada empresa a la que he entrado, he dejado mi grano de arena, implementando nuevas prácticas y mejorando unas otras. Mi residencia en cada una de ellas ha enriquecido mis conocimientos.' : 'In my experience, I have worked in different companies, with different approaches and objectives. I have contributed with my knowledge, acquiring more and better practices.'}</h1>
                             </div>
                         </div>
+                        <div className='p-4 flex items-center'>
+                            <div className='rounded-box bg-slate-400/20'>
+                                <div className='p-4'>
+                                    <h1 className=' text-xl font-bold mt-3'>{changeFlag ? 'Empresas en las que he trabajado: ' : 'Companies i´ve worked:'}</h1>
+                                </div>
+                                <div className='carousel main p-4'>
+                                    <div className='carousel-item w-full'>
+                                        <div>
+                                            <div className='carousel'>
+                                                {carousel_jobs()}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </section>
             <section id='portfolio'>
-
-            </section>
-            <section>
 
             </section>
         </div>
